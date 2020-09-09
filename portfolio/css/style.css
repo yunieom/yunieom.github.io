@@ -112,20 +112,20 @@ h6, .h6 {
 }
 
 .btn-primary {
-  background: #3b2e5a;
-  color: #fff;
+  background: #1d2323;
+  color: #eeeeee;
 }
 
 .btn-primary:active {
-  background: #542cb7 !important;
+  background: #7e97a6 !important;
 }
 
 .btn-primary:hover {
-  background: #542cb7;
+  background: #63686e;
 }
 
 .btn-primary.focus, .btn-primary.active {
-  background: #542cb7 !important;
+  background: #63686e !important;
   box-shadow: none !important;
 }
 

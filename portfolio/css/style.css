@@ -37,13 +37,13 @@ p-lg, .paragraph-lg {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #000;
+  color: #4c4c4c;;
   font-family: "Playfair Display", serif;
   line-height: 1.2;
 }
 
 h1, .h1 {
-  font-size: 80px;
+  font-size: 70px;
 }
 
 @media (max-width: 991px) {
@@ -112,7 +112,7 @@ h6, .h6 {
 }
 
 .btn-primary {
-  background: #41228e;
+  background: #3b2e5a;
   color: #fff;
 }
 
@@ -131,12 +131,12 @@ h6, .h6 {
 
 .btn-transparent {
   background: transparent;
-  color: #41228e;
+  color: #4c4c4c;
   font-weight: bold;
 }
 
 .btn-transparent:active, .btn-transparent:hover {
-  color: #41228e;
+  color: #394989;
 }
 
 body {
@@ -251,7 +251,7 @@ a:hover {
 }
 
 .bg-primary {
-  background: #41228e !important;
+  background: #000000 !important;
 }
 
 .bg-gray {
@@ -426,7 +426,7 @@ textarea.form-control {
 }
 
 .navigation.nav-bg {
-  background-color: #41228e;
+  background-color: #000000;
   padding: 15px 100px;
 }
 
@@ -439,7 +439,7 @@ textarea.form-control {
 @media (max-width: 991px) {
   .navigation {
     padding: 20px;
-    background: #41228e;
+    background: #000000;
   }
 }
 
@@ -455,6 +455,11 @@ textarea.form-control {
 
 .navbar-dark .navbar-nav .nav-link {
   color: #fff;
+}
+
+#parallax > ul {
+  text-align: right;
+  margin-right: 5rem !important;
 }
 
 .hero-area {

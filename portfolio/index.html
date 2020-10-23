@@ -24,14 +24,52 @@
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
+  <!--googleFont-->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto+Slab&display=swap" rel="stylesheet">
+
+  <!--EmailJS-->
+  <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+  <!-- contact -->
   <script>
+   // contact
+     $(document).ready(function() {
+		emailjs.init("user_8OY8DNVQaBuxHD4WO6RQj");
+        //"user_xxxxx"이 부분은 사용자마다 다르니 반드시 emailJS의 installation 화면을 확인
+        $('button[name=submit]').click(function(){
+
+          var templateParams = {
+          //각 요소는 emailJS에서 설정한 템플릿과 동일한 명으로 작성!
+                name: $('input[name=name]').val(),
+                email : $('input[name=email]').val(),
+                message : $('textarea[name=message]').val()
+           				};
+
+
+         emailjs.send('gmail', 'template_zd4l8yq', templateParams)
+         //emailjs.send('service ID', 'template ID', 보낼 내용이 담긴 객체)
+         	    .then(function(response) {
+         	       console.log('SUCCESS!', response.status, response.text);
+         	    }, function(error) {
+         	       console.log('FAILED...', error);
+         	    });
+
+        });
+
+     });
+  </script>
+  <script>
+
+
    jQuery(document).ready(function(){
-   $('h1').mousemove(function(e){
+   $('#cont3').mousemove(function(e){
      var rXP = (e.pageX - this.offsetLeft-$(this).width()/2);
      var rYP = (e.pageY - this.offsetTop-$(this).height()/2);
-     $('h1').css('text-shadow', +rYP/10+'px '+rXP/80+'px rgba(227,6,19,.8), '+rYP/8+'px '+rXP/60+'px rgba(255,237,0,1), '+rXP/70+'px '+rYP/12+'px rgba(0,159,227,.7)');
+     $('#cont3').css('text-shadow', +rYP/10+'px '+rXP/80+'px rgba(227,6,19,.8), '+rYP/8+'px '+rXP/60+'px rgba(255,237,0,1), '+rXP/70+'px '+rYP/12+'px rgba(0,159,227,.7)');
    });
 });
+
   </script>
 
 </head>
@@ -56,14 +94,14 @@
           <a class="nav-link" href="about.html">about</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="blog.html">Blog</a>
+          <a class="nav-link" href="blog-single.html">Blog</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="portfolio.html">Portfolio</a>
         </li>
-        <!--<li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" href="contact.html">Contact</a>
-        </li>-->
+        </li>
       </ul>
     </div>
   </nav>
@@ -73,8 +111,11 @@
 <section class="hero-area bg-primary" id="parallax">
   <div class="container">
     <div class="row">
-      <div class="col-lg-11 mx-auto">
-        <h1 class="text-white font-tertiary">Hi!<br/> I’m a Server Developer <br/> based in Seoul, Korea</h1>
+      <div class="col-lg-11 mx-auto" id="cont">
+          <h2 class="text-white font-tertiary" id="cont1">Hi,</h2>
+          <span class="text-white font-tertiary" id="cont2"> I'm a </span>
+          <span class="text-white font-tertiary" id="cont3"> Server Developer</span>
+          <h2 class="text-white font-tertiary" id="cont4">based in Seoul, Koera</h2>
       </div>
     </div>
   </div>
@@ -185,8 +226,8 @@
             <div class="wave" data-progress="40%"></div>
           </div>
           <div class="card-footer bg-white">
-            <h4 class="card-title">Python (40%)</h4>
-            기초 문법을 이용할 수 있습니다. DB와 서버를 연결, 데이터를 수정 및 칼럼 추가 등의 기능을 이용하여 서버를 구축하고 두개의 토이 프로젝트를 완성했습니다. .
+            <h4 class="card-title">Python (30%)</h4>
+            기초 문법을 이용할 수 있습니다. DB와 서버를 연결, 데이터를 수정 및 칼럼 추가 등의 기능을 이용하여 서버를 구축하고 두개의 토이 프로젝트를 완성했습니다.
           </div>
         </div>
       </div>
@@ -230,7 +271,7 @@
           </div>
           <div class="card-footer bg-white">
             <h4 class="card-title">English (75%)</h4>
-            호주에서 워킹 홀리데이 1년, Diploma of Business 과정 1년 6개월 총합 2년 6개월의 시간을 보냈습니다. TOEIC 900점, OPic IH(Intermediate High) 성적을 가지고 있습니다.
+            호주에서 워킹 홀리데이 1년, Diploma of Business 과정 1년 6개월 총합 2년 6개월의 시간을 보냈습니다. TOEIC 875점, OPic IH(Intermediate High) 성적을 가지고 있습니다.
           </div>
         </div>
       </div>
@@ -248,19 +289,19 @@
         <h2 class="section-title">Experience</h2>
       </div>
       <div class="col-lg-3 col-md-4 text-center">
-        <img src="images/experience/icon-1.png" alt="icon">
+        <img src="images/experience/webdesigner.png" alt="icon">
         <p class="mb-0">July 2014 - Mar 2015</p>
         <h4>Web Specialist</h4>
         <h6 class="text-light">oeuf Korea</h6>
       </div>
       <div class="col-lg-3 col-md-4 text-center">
-        <img src="images/experience/icon-2.png" alt="icon">
+        <img src="images/experience/barista.png" alt="icon">
         <p class="mb-0">Oct 2017 - Nov 2018</p>
         <h4>Main Barista</h4>
         <h6 class="text-light">San Churro</h6>
       </div>
       <div class="col-lg-3 col-md-4 text-center">
-        <img src="images/experience/icon-3.png" alt="icon">
+        <img src="images/experience/customercare.png" alt="icon">
         <p class="mb-0">Jan 2019 - Mar 2020</p>
         <h4>Customer Service Specialist</h4>
         <h6 class="text-light">agoda</h6>
@@ -332,49 +373,6 @@
 </section>
 <!-- /education -->
 
-<!-- services
-<section class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h2 class="section-title">Services</h2>
-      </div>
-      <div class="col-md-4 mb-4 mb-md-0">
-        <div class="card hover-shadow shadow">
-          <div class="card-body text-center px-4 py-5">
-            <i class="ti-palette icon mb-5 d-inline-block"></i>
-            <h4 class="mb-4">UI Design</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4 mb-md-0">
-        <div class="card active-bg-primary hover-shadow shadow">
-          <div class="card-body text-center px-4 py-5">
-            <i class="ti-vector icon mb-5 d-inline-block"></i>
-            <h4 class="mb-4">UX Design</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4 mb-md-0">
-        <div class="card hover-shadow shadow">
-          <div class="card-body text-center px-4 py-5">
-            <i class="ti-panel icon mb-5 d-inline-block"></i>
-            <h4 class="mb-4">Interaction Design</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
--->
-<!-- /services -->
-
 <!-- portfolio -->
 <section class="section">
   <div class="container">
@@ -399,29 +397,17 @@
           <img src="images/portfolio/mywebpage.png" alt="portfolio-image" class="img-fluid rounded w-100">
           <div class="hover-overlay">
             <div class="hover-content">
-              <a class="btn btn-light btn-sm" href="https://github.com/yunieom/project2.my_first_website">view project</a>
+              <a class="btn btn-light btn-sm" href="https://github.com/yunieom/project2.my_first_website" target="_blank">view project</a>
             </div>
           </div>
         </div>
       </div>
-      <!--
       <div class="col-lg-4 col-6 mb-4 shuffle-item">
         <div class="position-relative rounded hover-wrapper">
-          <img src="images/portfolio/item-3.png" alt="portfolio-image" class="img-fluid rounded w-100">
+          <img src="images/portfolio/sulchelin.png" alt="portfolio-image" class="img-fluid rounded w-100">
           <div class="hover-overlay">
             <div class="hover-content">
-              <a class="btn btn-light btn-sm" href="project-single.html">view project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      -->
-      <div class="col-lg-4 col-6 mb-4 shuffle-item">
-        <div class="position-relative rounded hover-wrapper">
-          <img src="images/portfolio/item-4.png" alt="portfolio-image" class="img-fluid rounded w-100">
-          <div class="hover-overlay">
-            <div class="hover-content">
-              <a class="btn btn-light btn-sm" href="project-single.html">view project</a>
+              <a class="btn btn-light btn-sm" href="http://sulchelin.shop/" target="_blank">view project</a>
             </div>
           </div>
         </div>
@@ -498,16 +484,17 @@
 
 
 <!-- contact -->
-<section class="section section-on-footer" data-background="images/backgrounds/#.png">
+<section class="section section-on-footer" data-background="">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h2 class="section-title">Contact Info</h2>
+        <h2 class="section-title">Contact Me</h2>
+        <p>If you’d like to chat about a project please fill in the form below and I’ll get back to you within 1-2 days.</p>
       </div>
       <div class="col-lg-8 mx-auto">
         <div class="bg-white rounded text-center p-5 shadow-down">
           <h4 class="mb-80">Contact Form</h4>
-          <form action="#" class="row">
+          <div class="row">
             <div class="col-md-6">
               <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">
             </div>
@@ -519,9 +506,9 @@
                 placeholder="Type Message Here"></textarea>
             </div>
             <div class="col-lg-6 col-10 mx-auto">
-              <button class="btn btn-primary w-100">send</button>
+              <button class="btn btn-primary w-100" name="submit" value="sendEmail">send</button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -550,12 +537,14 @@
       </div>
     </div>
   </div>
+  <!--
   <div class="border-top text-center border-dark py-5">
     <p class="mb-0 text-light">Copyright ©<script>
         var CurrentYear = new Date().getFullYear()
         document.write(CurrentYear)
       </script> a theme by <a href="https://themefisher.com">themefisher.com</a></p>
   </div>
+  -->
 </footer>
 <!-- /footer -->
 

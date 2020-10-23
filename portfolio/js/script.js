@@ -1,3 +1,6 @@
+
+
+
 (function ($) {
     'use strict';
 
@@ -97,6 +100,7 @@
     });
 
 
+
     // clients logo slider
     $('.client-logo-slider').slick({
         infinite: true,
@@ -151,6 +155,7 @@
             myShuffle.filter(input.value);
         }
     });
+
 
 
 

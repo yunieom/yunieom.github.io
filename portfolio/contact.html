@@ -2,8 +2,9 @@
 <html lang="zxx">
 
 <head>
+
   <meta charset="utf-8">
-  <title>Kross | Portfolio Template</title>
+  <title>Yuni EOm | Contact </title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,6 +25,40 @@
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
+  <!--googleFont-->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto+Slab&display=swap" rel="stylesheet">
+
+  <!--EmailJS-->
+  <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+  <!-- contact -->
+  <script>
+   // contact
+     $(document).ready(function() {
+		emailjs.init("user_8OY8DNVQaBuxHD4WO6RQj");
+        //"user_xxxxx"이 부분은 사용자마다 다르니 반드시 emailJS의 installation 화면을 확인
+        $('button[name=submit]').click(function(){
+
+          var templateParams = {
+          //각 요소는 emailJS에서 설정한 템플릿과 동일한 명으로 작성!
+                name: $('input[name=name]').val(),
+                email : $('input[name=email]').val(),
+                message : $('textarea[name=message]').val()
+           				};
+
+
+         emailjs.send('gmail', 'template_zd4l8yq', templateParams)
+         //emailjs.send('service ID', 'template ID', 보낼 내용이 담긴 객체)
+         	    .then(function(response) {
+         	       console.log('SUCCESS!', response.status, response.text);
+         	    }, function(error) {
+         	       console.log('FAILED...', error);
+         	    });
+
+        });
+	  });
+  </script>
 </head>
 
 <body>
@@ -46,7 +81,7 @@
           <a class="nav-link" href="about.html">about</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="blog.html">Blog</a>
+          <a class="nav-link" href="blog-single.html">Blog</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="portfolio.html">Portfolio</a>
@@ -82,16 +117,17 @@
 <!-- /page title -->
 
 <!-- contact -->
-<section class="section section-on-footer" data-background="images/backgrounds/bg-dots.png">
+<section class="section section-on-footer" data-background="">
   <div class="container">
     <div class="row">
       <div class="col-12 text-center">
-        <h2 class="section-title">Contact Info</h2>
+        <h2 class="section-title">Contact Me</h2>
+        <p>If you’d like to chat about a project please fill in the form below and I’ll get back to you within 1-2 days.</p>
       </div>
       <div class="col-lg-8 mx-auto">
         <div class="bg-white rounded text-center p-5 shadow-down">
           <h4 class="mb-80">Contact Form</h4>
-          <form action="#" class="row">
+          <div class="row">
             <div class="col-md-6">
               <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">
             </div>
@@ -103,15 +139,16 @@
                 placeholder="Type Message Here"></textarea>
             </div>
             <div class="col-lg-6 col-10 mx-auto">
-              <button class="btn btn-primary w-100">send</button>
+              <button class="btn btn-primary w-100" name="submit" value="sendEmail">send</button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 <!-- /contact -->
+
 
 <!-- footer -->
 <footer class="bg-dark footer-section">
@@ -120,25 +157,27 @@
       <div class="row">
         <div class="col-md-4">
           <h5 class="text-light">Email</h5>
-          <p class="text-white paragraph-lg font-secondary">steve.fruits@email.com</p>
+          <p class="text-white paragraph-lg font-secondary">yoonju.eom1@gmail.com</p>
         </div>
         <div class="col-md-4">
           <h5 class="text-light">Phone</h5>
-          <p class="text-white paragraph-lg font-secondary">+880 2544 658 256</p>
+          <p class="text-white paragraph-lg font-secondary">+82 10 4782 1840</p>
         </div>
         <div class="col-md-4">
           <h5 class="text-light">Address</h5>
-          <p class="text-white paragraph-lg font-secondary">125/A, CA Commercial Area, California, USA</p>
+          <p class="text-white paragraph-lg font-secondary">Mapo-gu, Seoul, Korea</p>
         </div>
       </div>
     </div>
   </div>
+  <!--
   <div class="border-top text-center border-dark py-5">
     <p class="mb-0 text-light">Copyright ©<script>
         var CurrentYear = new Date().getFullYear()
         document.write(CurrentYear)
       </script> a theme by <a href="https://themefisher.com">themefisher.com</a></p>
   </div>
+  -->
 </footer>
 <!-- /footer -->
 

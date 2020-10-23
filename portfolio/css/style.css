@@ -38,7 +38,7 @@ p-lg, .paragraph-lg {
 
 h1, h2, h3, h4, h5, h6 {
   color: #4c4c4c;;
-  font-family: "Playfair Display", serif;
+  font-family: 'Roboto Slab', serif;;
   line-height: 1.2;
 }
 
@@ -78,6 +78,15 @@ h6, .h6 {
   font-size: 14px;
 }
 
+/* text animation */
+#cont2{
+  font-size: 60px;
+}
+#cont3 {
+  color: #08F7FE !important;
+  font-size: 68px;
+}
+
 /* Button style */
 .btn {
   font-size: 22px;
@@ -102,7 +111,7 @@ h6, .h6 {
 }
 
 .btn-sm {
-  font-size: 15px;
+  font-size: 19px;
   padding: 10px 30px;
 }
 
@@ -216,8 +225,12 @@ a:hover {
 }
 
 .section-title {
-  margin-bottom: 80px;
+  margin-bottom: 20px !important;
   font-family: "BwNistaInt-xBd";
+}
+body > section.section.section-on-footer > div > div > div.col-12.text-center > p {
+  font-size: 20px;
+  margin-bottom: 60px;
 }
 
 .bg-cover {
@@ -272,6 +285,7 @@ a:hover {
 
 .text-light {
   color: #999999 !important;
+  font-size: 16px;
 }
 
 .mb-10 {
@@ -327,7 +341,8 @@ a:hover {
 }
 
 .font-secondary {
-  font-family: "Playfair Display", serif !important;
+  font-family: 'Oswald', sans-serif !important;
+  letter-spacing : 0.03rem;
 }
 
 .font-tertiary {
@@ -528,6 +543,10 @@ textarea.form-control {
   bottom: 100px;
   right: -10px;
 }
+#blog-title {
+  font-family: 'Noto Sans KR', sans-serif !important;
+  font-size: 44px;
+}
 
 .layer-bg {
   position: absolute;
@@ -593,6 +612,9 @@ textarea.form-control {
     -webkit-transform: translateX(-50%) rotate(360deg);
             transform: translateX(-50%) rotate(360deg);
   }
+}
+.mb-0 {
+  margin-top: 10px !important;
 }
 
 /* /skills */
@@ -773,7 +795,7 @@ blockquote {
   background: #eaeaea;
   border-left: 2px solid #41228e;
   font-style: italic;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .content * {
@@ -781,8 +803,8 @@ blockquote {
 }
 
 .content strong {
-  font-family: "Playfair Display", serif;
-  font-size: 22px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 24px;
   font-weight: normal;
   color: #000;
   display: inherit;
@@ -912,5 +934,6 @@ blockquote {
 .filter-controls li.active {
   font-weight: bold;
 }
+
 
 /*# sourceMappingURL=maps/style.css.map */

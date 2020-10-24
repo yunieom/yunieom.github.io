@@ -547,6 +547,10 @@ textarea.form-control {
   font-family: 'Noto Sans KR', sans-serif !important;
   font-size: 44px;
 }
+#blog {
+  font-weight: bold;
+  font-style: italic;
+}
 
 .layer-bg {
   position: absolute;
@@ -934,6 +938,8 @@ blockquote {
 .filter-controls li.active {
   font-weight: bold;
 }
+
+
 
 
 /*# sourceMappingURL=maps/style.css.map */
